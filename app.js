@@ -116,15 +116,15 @@ const birthOfAnimals = (animals) => {
         const newBornedAnimal = createAnimal(
           animal1.animalType,
           Math.random() < 0.5 ? "male" : "female",
-          animal1.xAxis + Math.random() * 500,
-          animal1.yAxis + Math.random() * 500,
+          animal1.xAxis + Math.random() * 10,
+          animal1.yAxis + Math.random() * 10,
           animal1.movementDistance
         );
         newBorns.push(newBornedAnimal);
       }
     }
   }
-
+  console.log(newBorns);
   animals.push(...newBorns);
 };
 
@@ -132,7 +132,7 @@ const birthOfAnimals = (animals) => {
 const runSim = () => {
   const animals = pushAnimals();
   console.log("Animals count at the beginning:", countAnimals(animals));
-  for (let step = 0; step < 100; step++) {
+  for (let step = 0; step < 1000; step++) {
     movementOfUnits(animals);
   }
   console.log("Animals count at the end:", countAnimals(animals));
