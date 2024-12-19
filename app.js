@@ -103,6 +103,7 @@ const huntFunction = (animals) => {
 // to control of new animals birth
 const birthOfAnimals = (animals) => {
   const newBorns = [];
+  const maxBirth = 1;
 
   for (let i = 0; i < animals.length; i++) {
     for (let j = i + 1; j < animals.length; j++) {
@@ -111,6 +112,7 @@ const birthOfAnimals = (animals) => {
       if (
         animal1.animalType === animal2.animalType &&
         animal1.gender !== animal2.gender &&
+        newBorns.length <= maxBirth &&
         animal1.distanceTo(animal2) <= 3
       ) {
         const newBornedAnimal = createAnimal(
@@ -124,7 +126,6 @@ const birthOfAnimals = (animals) => {
       }
     }
   }
-  console.log(newBorns);
   animals.push(...newBorns);
 };
 
